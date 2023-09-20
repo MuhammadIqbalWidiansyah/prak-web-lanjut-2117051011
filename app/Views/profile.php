@@ -11,17 +11,17 @@
             border-radius: 50%;
             width: 250px;
             height: 250px;
-            /* margin-bottom: 50px; */
+            margin-bottom: 50px;
         }
         .container {
-            /* margin-top: 50px; */
+            margin-top: 50px;
             align-items: center;
             justify-content: center;
             display: grid;
         }
-        /* .btn {
+        .btn {
             margin-bottom: 25px;
-        } */
+        }
     </style>
 </head>
 <body>
