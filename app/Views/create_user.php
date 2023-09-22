@@ -16,7 +16,17 @@
                 <label for="npm">NPM</label>
                 <input type="text" id="npm" name="npm" required>
                 <label for="kelas">Kelas</label>
-                <input type="text" id="kelas" name="kelas" required>
+                <select id="kelas" name="kelas" required>
+                    <?php
+                        foreach ($kelas as $item) {
+                            ?>
+                                <option value="<?= $item['id'] ?>">
+                                    <?= $item['nama_kelas'] ?>
+                                </option>
+                            <?php
+                        }
+                    ?>
+                </select>
                 <button type="submit">Kirim</button>
             </form>
         </div>
