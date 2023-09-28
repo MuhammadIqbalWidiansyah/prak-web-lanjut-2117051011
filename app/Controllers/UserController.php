@@ -12,7 +12,7 @@ class UserController extends BaseController
         //
     }
     
-    public function profile($nama = "", $kelas = "", $npm = "") {
+    public function profile($nama = "", $npm = "", $kelas = "") {
         $data = [
             'nama'=> $nama,
             'npm' => $npm,
@@ -70,7 +70,7 @@ class UserController extends BaseController
                 'nama_kelas' => 'D'
             ]
         ];
-        
+
         // Validasi input
         if (!$this->validate($userModel->validationRules, $userModel->validationMessages)) {
             $data = [

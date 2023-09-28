@@ -11,8 +11,9 @@ class UserModel extends Model
     protected $validationRules = [
         'nama' => 'required|alpha_space',
         'npm' => 'required|is_unique[user.npm]',
-        'id_kelas' => 'required'
+        'kelas' => 'required'
     ];
+    protected $skipValidation = true;
     protected $validationMessages = [
         'nama' => [
             'required' => 'Nama harus diisi.',
@@ -22,7 +23,7 @@ class UserModel extends Model
             'required' => 'NPM harus diisi.',
             'is_unique' => 'NPM sudah terdaftar.'
         ],
-        'id_kelas' => [
+        'kelas' => [
             'required' => 'Kelas harus dipilih.'
         ]
     ];
