@@ -8,6 +8,24 @@ class UserModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'user';
+    protected $validationRules = [
+        'nama' => 'required|alpha_space',
+        'npm' => 'required|is_unique[user.npm]',
+        'id_kelas' => 'required'
+    ];
+    protected $validationMessages = [
+        'nama' => [
+            'required' => 'Nama harus diisi.',
+            'alpha_space' => 'Nama harus berupa huruf.'
+        ],
+        'npm' => [
+            'required' => 'NPM harus diisi.',
+            'is_unique' => 'NPM sudah terdaftar.'
+        ],
+        'id_kelas' => [
+            'required' => 'Kelas harus dipilih.'
+        ]
+    ];
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
