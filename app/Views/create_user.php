@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?=base_url("assets/css/style.css")?>">
-</head>
-<body>
+<?= $this->extend('layouts/app') ?>
+
+<?= $this->section('content') ?>
     <div class="container">
         <div class="form-container" id="login-form">
             <h1>Data Diri</h1>
@@ -18,12 +12,12 @@
                 <?php endif; ?>
                 <label for="npm">NPM</label>
                 <input type="text" id="npm" name="npm" placeholder="Masukkan NPM">
-                <?php if (isset($validation) && $validation->hasError('npm')):?>
+                <?php if (isset($validation) && $validation->hasError('npm')): ?>
                     <p class="error"><?= $validation->getError('npm') ?></p>
                 <?php endif; ?>
                 <label for="id_kelas">Kelas</label>
-                <select id="id_kelas" name="kelas">
-                    <option disabled selected hidden>Pilih Kelas</option>
+                <select id="id_kelas" name="id_kelas">
+                    <option value="" hidden>Pilih Kelas</option>
                     <?php
                         foreach ($kelas as $item) {
                             ?>
@@ -34,12 +28,11 @@
                         }
                     ?>
                 </select>
-                <?php if (isset($validation) && $validation->hasError('kelas')):?>
-                    <p class="error"><?= $validation->getError('kelas') ?></p>
+                <?php if (isset($validation) && $validation->hasError('id_kelas')): ?>
+                    <p class="error"><?= $validation->getError('id_kelas') ?></p>
                 <?php endif; ?>
                 <button type="submit">Kirim</button>
             </form>
         </div>
     </div>
-</body>
-</html>
+<?= $this->endSection() ?>
