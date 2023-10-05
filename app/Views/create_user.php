@@ -16,8 +16,8 @@
                     <p class="error"><?= $validation->getError('npm') ?></p>
                 <?php endif; ?>
                 <label for="id_kelas">Kelas</label>
-                <select id="id_kelas" name="id_kelas">
-                    <option value="" hidden>Pilih Kelas</option>
+                <select id="id_kelas" name="kelas">
+                    <option disabled selected hidden>Pilih Kelas</option>
                     <?php
                         foreach ($kelas as $item) {
                             ?>
@@ -28,8 +28,8 @@
                         }
                     ?>
                 </select>
-                <?php if (isset($validation) && $validation->hasError('id_kelas')): ?>
-                    <p class="error"><?= $validation->getError('id_kelas') ?></p>
+                <?php if (isset($validation) && $validation->hasError('kelas')): ?>
+                    <p class="error"><?= $validation->getError('kelas') ?></p>
                 <?php endif; ?>
                 <button type="submit">Kirim</button>
             </form>
