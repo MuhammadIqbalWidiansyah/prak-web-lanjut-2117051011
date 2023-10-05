@@ -70,7 +70,8 @@ class UserController extends BaseController
         if (!$this->validate($this->userModel->validationRules, $this->userModel->validationMessages)) {
             $data = [
                 'kelas' => $kelas,
-                'validation' => $this->validator
+                'validation' => $this->validator,
+                'title' => 'Store User'
             ];
             return view('create_user', $data);
         }
@@ -81,6 +82,6 @@ class UserController extends BaseController
             'id_kelas' => $this->request->getVar('kelas')
         ]);
 
-        return redirect('base_url')->to('/user');
+        return redirect()->to('/user');
     }
 }
