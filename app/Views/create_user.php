@@ -4,7 +4,7 @@
     <div class="container">
         <div class="form-container" id="login-form">
             <h1>Data Diri</h1>
-            <form action="<?=base_url('/user/store')?>" method="post">
+            <form action="<?=base_url('/user/store')?>" method="post" enctype="multipart/form-data">
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" name="nama" placeholder="Masukkan Nama">
                 <?php if (isset($validation) && $validation->hasError('nama')): ?>
@@ -28,6 +28,8 @@
                         }
                     ?>
                 </select>
+                <label for="foto">Foto</label>
+                <input type="file" id="foto" name="foto">
                 <?php if (isset($validation) && $validation->hasError('kelas')): ?>
                     <p class="error"><?= $validation->getError('kelas') ?></p>
                 <?php endif; ?>
