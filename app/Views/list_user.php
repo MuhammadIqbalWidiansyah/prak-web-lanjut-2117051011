@@ -4,6 +4,7 @@
     <div class="table-responsive mt-4">
         <h1>Daftar Pengguna</h1>
         <table class="table align-middle table-dark">
+            <a href="<?= base_url('/user/create') ?>" role="button" class="btn btn-primary">Tambah Data</a>
             <thead class="table-light">
                 <tr>
                     <th>ID</th>
@@ -24,6 +25,7 @@
                     <td><?= $user['npm'] ?></td>
                     <td><?= $user['nama_kelas'] ?></td>
                     <td>
+                        <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
                         <button class="btn btn-warning">Edit</button>
                         <button class="btn btn-danger">Delete</button>
                     </td>
