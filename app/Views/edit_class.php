@@ -15,7 +15,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="<?= base_url('/user') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="<?= base_url('/user') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-user"></i> Pengguna
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
@@ -24,7 +24,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?= base_url('/class') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link active dropdown-toggle" href="<?= base_url('/class') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-chalkboard"></i> Kelas
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
@@ -40,37 +40,14 @@
 
     <div class="container-edit">
         <div class="form-container" id="login-form">
-            <h1>Data Pengguna</h1>
-            <form action="<?= base_url('/user/' . $user['id']) ?>" method="post" enctype="multipart/form-data">
+            <h1>Data Kelas</h1>
+            <form action="<?= base_url('/class/' . $kelas['id']) ?>" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="put">
                 <?= csrf_field() ?>
-                <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" value="<?= $user['nama'] ?>" placeholder="Masukkan Nama">
-                <?php if (isset($validation) && $validation->hasError('nama')): ?>
-                    <p class="error"><?= $validation->getError('nama') ?></p>
-                <?php endif; ?>
-                <label for="npm">NPM</label>
-                <input type="text" id="npm" name="npm" value="<?= $user['npm'] ?>" placeholder="Masukkan NPM">
-                <?php if (isset($validation) && $validation->hasError('npm')): ?>
-                    <p class="error"><?= $validation->getError('npm') ?></p>
-                <?php endif; ?>
-                <label for="id_kelas">Kelas</label>
-                <select id="id_kelas" name="kelas">
-                    <?php
-                        foreach ($kelas as $item) {
-                            ?>
-                                <option value="<?= $item['id'] ?>" <?= $user['id_kelas'] == $item['id'] ? 'selected' : '' ?>>
-                                    <?= $item['nama_kelas'] ?>
-                                </option>
-                            <?php
-                        }
-                    ?>
-                </select>
-                <label for="foto">Foto</label>
-                <img src="<?= $user['foto'] ?? base_url('/assets/img/default_img.png') ?>" alt="" style="width: 250px;">
-                <input type="file" id="foto" name="foto">
-                <?php if (isset($validation) && $validation->hasError('kelas')): ?>
-                    <p class="error"><?= $validation->getError('kelas') ?></p>
+                <label for="nama_kelas">Nama Kelas</label>
+                <input type="text" id="nama_kelas" name="nama_kelas" value="<?= $kelas['nama_kelas'] ?>" placeholder="Masukkan Nama Kelas">
+                <?php if (isset($validation) && $validation->hasError('nama_kelas')): ?>
+                    <p class="error"><?= $validation->getError('nama_kelas') ?></p>
                 <?php endif; ?>
                 <button class="btn-submit" type="submit">Perbarui</button>
             </form>

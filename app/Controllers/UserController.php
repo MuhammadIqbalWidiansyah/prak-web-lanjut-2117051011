@@ -99,9 +99,6 @@ class UserController extends BaseController
             'id_kelas' => $this->request->getVar('kelas'),
             'foto' => $foto
         ]);
-
-        
-
         return redirect()->to('/user');
     }
 

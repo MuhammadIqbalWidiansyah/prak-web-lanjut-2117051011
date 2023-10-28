@@ -15,20 +15,20 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item dropdown">
-                <a class="nav-link active dropdown-toggle" href="<?= base_url('/user') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="<?= base_url('/user') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-user"></i> Pengguna
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item active" href="<?= base_url('/user') ?>"><i class="fa fa-bars"></i> Daftar Pengguna</a></li>
+                  <li><a class="dropdown-item" href="<?= base_url('/user') ?>"><i class="fa fa-bars"></i> Daftar Pengguna</a></li>
                   <li><a class="dropdown-item" href="<?= base_url('/user/create') ?>"><i class="fa fa-plus"></i> Tambah Pengguna</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="<?= base_url('/class') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link active dropdown-toggle" href="<?= base_url('/class') ?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-chalkboard"></i> Kelas
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="<?= base_url('/class') ?>"><i class="fa fa-bars"></i> Daftar Kelas</a></li>
+                  <li><a class="dropdown-item active" href="<?= base_url('/class') ?>"><i class="fa fa-bars"></i> Daftar Kelas</a></li>
                   <li><a class="dropdown-item" href="<?= base_url('/class/create') ?>"><i class="fa fa-plus"></i> Tambah Kelas</a></li>
                 </ul>
               </li>
@@ -40,38 +40,31 @@
 
     <div class="container-list">
         <div class="table-responsive mt-4">
-            <h1>Daftar Pengguna</h1>
+            <h1>Daftar Kelas</h1>
             <table class="table align-middle table-dark text-center">
-              <a href="<?= base_url('/user/create') ?>">
-                <button class="btn-add" >Tambah Pengguna</button>
+              <a href="<?= base_url('/class/create') ?>">
+                <button class="btn-add" >Tambah Kelas</button>
               </a>
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>
-                        <th>Nama</th>
-                        <th>NPM</th>
-                        <th>Kelas</th>
+                        <th>Nama Kelas</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                         $nextId = 1;
-                        foreach($users as $user) {
+                        foreach($class as $kelas) {
                     ?>
                     <tr>
                         <td><?= $nextId++ ?></td>
-                        <td><?= $user['nama'] ?></td>
-                        <td><?= $user['npm'] ?></td>
-                        <td><?= $user['nama_kelas'] ?></td>
+                        <td><?= $kelas['nama_kelas'] ?></td>
                         <td>
-                            <a href="<?= base_url('user/' . $user['id']) ?>">
-                                <button class="btn btn-primary"><i class="fa fa-user"></i></button>
-                            </a>
-                            <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>">
+                            <a href="<?= base_url('class/' . $kelas['id'] . '/edit') ?>">
                                 <button class="btn btn-warning"><i class="fa fa-pen" style="color: white;"></i></button>
                             </a>
-                            <form action="<?= base_url('user/' . $user['id']) ?>" method="post" style="display: inline-block">
+                            <form action="<?= base_url('class/' . $kelas['id']) ?>" method="post" style="display: inline-block">
                                 <input type="hidden" name="_method" value="delete">
                                 <?= csrf_field() ?>
                                 <a>
