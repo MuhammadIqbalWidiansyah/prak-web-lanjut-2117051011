@@ -9,13 +9,36 @@
     background-color: #222;
   }
 
-  .container {
+  .container-create {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-edit {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-list {
     padding-top: 50px;
     padding-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
+  }
+
+  .container-profile {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .form-container {
@@ -28,11 +51,39 @@
     color: #fff;
   }
 
+  .form-profile {
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    display: grid;
+  }
+
+  .rounded-image {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
   h1 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 36px;
     color: #b38bff;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 30px;
   }
 
   form {
@@ -65,7 +116,19 @@
     background-color: #555;
   }
 
-  button {
+  .btn-submit {
+    padding: 10px;
+    background-color: #b38bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .btn-add {
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #b38bff;
     color: #fff;
@@ -101,3 +164,33 @@
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
+
+  .navbar-nav .nav-link .fa {
+    width: 24px;
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-social-links li {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0px;
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+
+.profile-social-links li a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+  position: flex;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.profile-social-links li a i {
+  position: flex;
+  z-index: 1;
+}
